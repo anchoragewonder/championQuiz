@@ -1,1 +1,33 @@
+html{
+    font-size: 12px;
+    
+}
 
+.bg{
+    background-color: #4056A1;
+}
+
+h1{
+    text-align: center;
+    min-height: 20vh;
+}
+
+.container{
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+    text-align: center;
+}
+
+.btn{
+    border-radius: 5px;
+    background-color: #F1C320;
+    color: white;
+    margin: auto;
+    min-height: 200px;
+    min-width: 200px;
+    font-size: 40px;
+}
