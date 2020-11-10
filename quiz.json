@@ -1,0 +1,70 @@
+{
+    "quiz": [
+        {
+            "question": "What would you do if you see an enemy in the distance?",
+            "attribute": "sturdiness",
+            "responses": [
+                {
+                    "text": "Run and hide",
+                    "value": 1
+                },
+                {
+                    "text": "CHARRRRRRRRRRGE",
+                    "value": 8
+                },
+                {
+                    "text": "Sneak in behind enemy lines",
+                    "value": 3
+                },
+                {
+                    "text": "Set up for an ambush",
+                    "value": 6
+                }
+            ]
+        },
+        {
+            "question": "Weapon of choice?",
+            "attribute": "damagetype",
+            "responses": [
+                {
+                    "text": "Sword",
+                    "value": 3
+                },
+                {
+                    "text": "Pistols",
+                    "value": 8
+                },
+                {
+                    "text": "Fist",
+                    "value": 1
+                },
+                {
+                    "text": "Staff",
+                    "value": 7
+                }
+            ]
+        },
+        {
+            "question": "How do you prepare for a battle?",
+            "attribute": "mobility",
+            "responses": [
+                {
+                    "text": "Study tatics",
+                    "value": 2
+                },
+                {
+                    "text": "CHARRRRRRRRRRGE",
+                    "value": 4
+                },
+                {
+                    "text": "CHARRRRRRRRRRGE",
+                    "value": 4
+                },
+                {
+                    "text": "CHARRRRRRRRRRGE",
+                    "value": 4
+                }
+            ]
+        }
+    ]
+}
