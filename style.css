@@ -10,6 +10,7 @@ html{
 h1{
     text-align: center;
     min-height: 20vh;
+    margin-top: 50px;
 }
 
 .container{
@@ -20,11 +21,12 @@ h1{
     padding: 10px;
     box-shadow: 0 0 10px 2px;
     text-align: center;
+    margin-bottom: 150px;
 }
 
 .btn{
     border-radius: 5px;
-    background-color: #F1C320;
+    background-color: #000157;
     color: white;
     margin: auto;
     min-height: 200px;
