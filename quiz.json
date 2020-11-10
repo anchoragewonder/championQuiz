@@ -2,60 +2,69 @@
     "quiz": [
         {
             "question": "What would you do if you see an enemy in the distance?",
-            "response1": {
-                "string": "run and hide",
-                "secretValue": 1
-            },
-            "response2": {
-                "string": "CHARRRRRRRRRRGE!",
-                "secretValue": 4
-            },
-            "response3": {
-                "string": "Set up for an ambush",
-                "secretValue": 3
-            },
-            "response4": {
-                "string": "Sneak in behind enemy lines",
-                "secretValue": 2
-            }
+            "attribute": "sturdiness",
+            "responses": [
+                {
+                    "text": "Run and hide",
+                    "value": 1
+                },
+                {
+                    "text": "CHARRRRRRRRRRGE",
+                    "value": 8
+                },
+                {
+                    "text": "Sneak in behind enemy lines",
+                    "value": 3
+                },
+                {
+                    "text": "Set up for an ambush",
+                    "value": 6
+                }
+            ]
         },
         {
             "question": "Weapon of choice?",
-            "response1": {
-                "string": "run and hide",
-                "secretValue": 1
-            },
-            "response2": {
-                "string": "run and hide",
-                "secretValue": 1
-            },
-            "response3": {
-                "string": "run and hide",
-                "secretValue": 1
-            },
-            "response4": {
-                "string": "run and hide",
-                "secretValue": 1
-            }
+            "attribute": "damagetype",
+            "responses": [
+                {
+                    "text": "Sword",
+                    "value": 3
+                },
+                {
+                    "text": "Pistols",
+                    "value": 8
+                },
+                {
+                    "text": "Fist",
+                    "value": 1
+                },
+                {
+                    "text": "Staff",
+                    "value": 7
+                }
+            ]
         },
         {
-            "question": "Do you seek knowledge or the thrill of battle?",
-            "response1": {
-                "string": "run and hide",
-                "secretValue": 1
-            },
-            "response2": {
-                "string": "run and hide",
-                "secretValue": 1
-            },
-            "response3": {
-                "string": "run and hide",
-                "secretValue": 1
-            },
-            "response4": {
-                "string": "run and hide",
-                "secretValue": 1
-            }
+            "question": "How do you prepare for a battle?",
+            "attribute": "mobility",
+            "responses": [
+                {
+                    "text": "Study tatics",
+                    "value": 2
+                },
+                {
+                    "text": "CHARRRRRRRRRRGE",
+                    "value": 4
+                },
+                {
+                    "text": "CHARRRRRRRRRRGE",
+                    "value": 4
+                },
+                {
+                    "text": "CHARRRRRRRRRRGE",
+                    "value": 4
+                }
+            ]
         }
     ]
 }
