@@ -32,7 +32,7 @@
                 },
                 {
                     "text": "Pistols",
-                    "value": 8
+                    "value": 5
                 },
                 {
                     "text": "Fist",
@@ -53,16 +53,16 @@
                     "value": 2
                 },
                 {
-                    "text": "CHARRRRRRRRRRGE",
-                    "value": 4
+                    "text": "Train in combat",
+                    "value": 7
                 },
                 {
-                    "text": "CHARRRRRRRRRRGE",
-                    "value": 4
+                    "text": "Read enchatments on magical scrolls",
+                    "value": 3
                 },
                 {
-                    "text": "CHARRRRRRRRRRGE",
-                    "value": 4
+                    "text": "Charge ahead no need to prepare",
+                    "value": 9
                 }
             ]
         }

@@ -16,7 +16,7 @@ function createJSObject(json) {
     console.log(quizLength);
 }
 
-getJSON("https://raw.githubusercontent.com/anchoragewonder/championQuiz/main/quiz.json").then(data => {
+getJSON("https://raw.githubusercontent.com/anchoragewonder/championQuiz/cloning_quiz/quiz.json").then(data => {
     console.log("Success");
 })
 
