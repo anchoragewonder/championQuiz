@@ -52,7 +52,7 @@ $(document).ready(function () {
 
             // populates card clone with the question header from dictionary
             $(quiz_card).find("#cardQuestion").text(questionHeader);
-            $(quiz_card).find("#cardAtrr").text(questionAttr);
+            $(quiz_card).find("#cardAttr").text(questionAttr);
             // at the end of each for loop create new cloned element with varibles from dictionary
             document.body.appendChild(quiz_card);
         }
@@ -68,6 +68,5 @@ function buttonClick(obj, btnNum) {
 
     answers[num] = btnVal;
 
-    console.log(answers)
-    console.log(num);
+    console.log(answers);
 }
