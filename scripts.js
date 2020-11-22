@@ -13,8 +13,6 @@ async function getJSON(path) {
 function createJSObject(json) {
     quizData = json.quiz;
     quizLength = json.quiz.length;
-    console.log(quizData[0].question);
-    console.log(quizLength);
 }
 
 getJSON("https://raw.githubusercontent.com/anchoragewonder/championQuiz/cloning_quiz/quiz.json").then(data => {
@@ -59,12 +57,11 @@ $(document).ready(function () {
     })
 })
 
-function buttonClick(obj, btnNum) {
-    var buttonPressed = btnNum;
+function buttonClick(obj) {
     var btnClass = obj.className;
     var num = btnClass.match(/\d/g);
     var btnVal = obj.value;
-    num = parseInt(num.join(''));
+    //num = parseInt(num.join(''));
 
     answers[num] = btnVal;
 

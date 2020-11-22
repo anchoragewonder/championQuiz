@@ -55,21 +55,6 @@ h1{
     padding: 10px;
 }
 
-/*
-[type=radio] { 
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-   IMAGE STYLES 
-  [type=radio] + label {
-    cursor: pointer;
-  }
-  
-   CHECKED STYLES 
-  [type=radio]:checked + label {
-    outline: 2px solid #f00;
-  }
-*/
+.hidden{
+    display: none;
+}
