@@ -2,7 +2,7 @@
     "quiz": [
         {
             "question": "What would you do if you see an enemy in the distance?",
-            "attribute": "sturdiness",
+            "attribute": "defense",
             "responses": [
                 {
                     "text": "Run and hide",
