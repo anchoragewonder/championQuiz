@@ -24,7 +24,7 @@
         },
         {
             "question": "Weapon of choice?",
-            "attribute": "damagetype",
+            "attribute": "damage",
             "responses": [
                 {
                     "text": "Sword",
@@ -62,6 +62,28 @@
                 },
                 {
                     "text": "Charge ahead no need to prepare",
+                    "value": 9
+                }
+            ]
+        },
+        {
+            "question": "What do you do when you see a friend in danger?",
+            "attribute": "crowdControl",
+            "responses": [
+                {
+                    "text": "Pull out your sheild and block for them",
+                    "value": 5
+                },
+                {
+                    "text": "Taunt the enemy",
+                    "value": 7
+                },
+                {
+                    "text": "Walk away and pretend you saw nothing",
+                    "value": 1
+                },
+                {
+                    "text": "Snare the enemy and stop thier movement",
                     "value": 9
                 }
             ]

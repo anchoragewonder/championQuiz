@@ -1,8 +1,8 @@
 var quiz_card_prefab;
 var quizData;
 var quizLength;
-var answers = [];
-var attribute = [];
+var answers = {};
+
 
 // return JSON data from any file path (asynchronous)
 async function getJSON(path) {
@@ -32,14 +32,14 @@ $(document).ready(function () {
         for (let i = 0; i < quizLength; i++) {
             let quiz_card = quiz_card_prefab.cloneNode(true);
 
-            // defining varibles to eaily acces ditionary and populate the clone card
+            // defining varibles to easily acces ditionary and populate the clone card
             let questionHeader = quizData[i].question;
             let questionAttr = quizData[i].attribute;
             let questionRes = quizData[i].responses;
-            var secretValA = questionRes[0].value;
-            var secretValB = questionRes[1].value;
-            var secretValC = questionRes[2].value;
-            var secretValD = questionRes[3].value;
+            let secretValA = questionRes[0].value;
+            let secretValB = questionRes[1].value;
+            let secretValC = questionRes[2].value;
+            let secretValD = questionRes[3].value;
 
             // need to optimize : inputs text from dictionary into button id in cloned element
             $(quiz_card).find("#button_1").text(questionRes[0].text).addClass(`question${i}`).attr('value', secretValA);
@@ -47,10 +47,10 @@ $(document).ready(function () {
             $(quiz_card).find("#button_3").text(questionRes[2].text).addClass(`question${i}`).attr('value', secretValC);
             $(quiz_card).find("#button_4").text(questionRes[3].text).addClass(`question${i}`).attr('value', secretValD);
 
-
             // populates card clone with the question header from dictionary
             $(quiz_card).find("#cardQuestion").text(questionHeader);
             $(quiz_card).find("#cardAttr").text(questionAttr);
+
             // at the end of each for loop create new cloned element with varibles from dictionary
             document.body.appendChild(quiz_card);
         }
@@ -58,12 +58,10 @@ $(document).ready(function () {
 })
 
 function buttonClick(obj) {
-    var btnClass = obj.className;
-    var num = btnClass.match(/\d/g);
-    var btnVal = obj.value;
-    //num = parseInt(num.join(''));
+    let btnVal = obj.value;
+    let attributeName = $(obj).closest(".container").find("#cardAttr").text();
+    answers[attributeName] = btnVal;
 
-    answers[num] = btnVal;
-
+    console.log(attributeName);
     console.log(answers);
 }
