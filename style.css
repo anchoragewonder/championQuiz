@@ -35,6 +35,17 @@ h1{
     font-size: 40px;
 }
 
+#submit{
+    border-radius: 5px;
+    background-color: #000157;
+    color: white;
+    margin: auto;
+    min-height: 200px;
+    min-width: 200px;
+    font-size: 40px;
+
+}
+
 .quizQuestion{
     text-align: center;
     font-size: 25px;
