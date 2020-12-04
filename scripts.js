@@ -2,7 +2,7 @@ var quiz_card_prefab;
 var quizData;
 var quizLength;
 var answers = {};
-var url = "https://kauhny1enj.execute-api.us-east-1.amazonaws.com/Stage/quizPost/"
+var url = "https://kauhny1enj.execute-api.us-east-1.amazonaws.com/Stage/quizpost/"
 
 // return JSON data from any file path (asynchronous)
 async function getJSON(path) {
@@ -57,7 +57,7 @@ $(document).ready(function () {
     })
 })
 
-$("#submit").click(function () {
+$(".submit").click(function () {
     $.post(url, answers, function (data, status) {
         console.log(`${data} and status is ${status}`)
     });

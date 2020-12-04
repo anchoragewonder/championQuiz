@@ -35,7 +35,7 @@ h1{
     font-size: 40px;
 }
 
-#submit{
+.submit{
     border-radius: 5px;
     background-color: #000157;
     color: white;
