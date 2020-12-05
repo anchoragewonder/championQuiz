@@ -2,7 +2,7 @@ var quiz_card_prefab;
 var quizData;
 var quizLength;
 var answers = {};
-var url = "https://kauhny1enj.execute-api.us-east-1.amazonaws.com/Stage/quizpost/"
+var url = "https://kauhny1enj.execute-api.us-east-1.amazonaws.com/Prod/quizpost"
 
 // return JSON data from any file path (asynchronous)
 async function getJSON(path) {
