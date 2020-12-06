@@ -58,9 +58,29 @@ $(document).ready(function () {
 })
 
 $(".submit").click(function () {
-    $.post(url, answers, function (data, status) {
-        console.log(`${data} and status is ${status}`)
-    });
+    var xhr = new XMLHttpRequest();
+    const body = {
+        "damage": 2,
+        "defense": 3,
+        "mobility": 2,
+        "crowdControl": 3
+    }
+
+    xhr.onreadystatechange = function () {
+        if (this.readyState != 4) return;
+
+        if (this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            console.log(data);
+
+            // we get the returned data
+        }
+
+        // end of state change: it can be after some time (async)
+    };
+
+    xhr.open('POST', 'https://kauhny1enj.execute-api.us-east-1.amazonaws.com/Prod/quizpost', true);
+    xhr.send(JSON.stringify(body));
 });
 
 function buttonClick(obj) {
