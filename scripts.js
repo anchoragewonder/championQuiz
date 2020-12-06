@@ -59,12 +59,6 @@ $(document).ready(function () {
 
 $(".submit").click(function () {
     var xhr = new XMLHttpRequest();
-    const body = {
-        "damage": 2,
-        "defense": 3,
-        "mobility": 2,
-        "crowdControl": 3
-    }
 
     xhr.onreadystatechange = function () {
         if (this.readyState != 4) return;
@@ -80,7 +74,7 @@ $(".submit").click(function () {
     };
 
     xhr.open('POST', 'https://kauhny1enj.execute-api.us-east-1.amazonaws.com/Prod/quizpost', true);
-    xhr.send(JSON.stringify(body));
+    xhr.send(JSON.stringify(answers));
 });
 
 function buttonClick(obj) {
