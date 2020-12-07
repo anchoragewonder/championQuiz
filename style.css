@@ -35,8 +35,9 @@ h1{
     font-size: 40px;
 }
 
-.cardBg{
-    background-image: url("/assets/Group\ 1.png");
+.champText{ 
+    font-size: 32px;
+    margin-top: 20px;
 }
 
 .submit{
