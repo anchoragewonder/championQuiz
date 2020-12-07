@@ -79,7 +79,7 @@ $(".submit").click(function () {
 
 function buttonClick(obj) {
     let btnVal = obj.value;
-    let attributeName = $(obj).closest(".container").find("#cardAttr").text();
+    let attributeName = $(obj).closest(".quizContainer").find("#cardAttr").text();
     answers[attributeName] = btnVal;
 
     console.log(attributeName);
