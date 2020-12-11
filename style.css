@@ -62,12 +62,58 @@ h1{
     font-size: 20px;
 }
 
+.break {
+    flex-basis: 100%;
+    height: 2px;
+}
+
 .cardBg{
     background-image: url(assets/Group\ 1.png);
     background-repeat:no-repeat;
     background-size:contain;
     background-position:center;
     min-width: 200px;
+}
+
+.cardChamp{
+    max-width: 50%;
+    height: auto;
+    justify-self: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.cardContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;    
+}
+
+.champName{
+    padding-top: 20px;
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+
+.champType{
+    font-size: 30px;
+    font-style: italic;
+}
+
+.valueLeft{
+    justify-content: center;
+    padding-right: 5px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.valueRight{
+    justify-content: center;
+    padding-left: 5px;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .quizQuestion{
@@ -77,6 +123,8 @@ h1{
 
 .stats{
     max-width: 400px;
+    justify-content: center;
+    text-align: start;
 }
 
 .col-lg-8{
@@ -92,7 +140,19 @@ h1{
     display: none;
 }
 
-@media only screen and (max-width: 768px) {
+.rowLeft{
+    padding-right: 10px;
+}
+
+.rowRight{
+    padding-left: 10px;
+}
+
+.rowHeight{
+    height: 50vh;
+}
+
+@media only screen and (max-width: 992px) {
     .champText{
         font-size: 20px;
     }
