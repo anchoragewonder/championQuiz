@@ -76,14 +76,14 @@ h1{
 }
 
 .cardChamp{
-    max-width: 50%;
+    width: 390px;
     height: auto;
     justify-self: center;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.cardContainer{
+.cardContainer{ 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,9 +127,8 @@ h1{
     text-align: start;
 }
 
-.col-lg-8{
-    min-height: 400px;
-    position: relative;
+.col-12{
+    min-height: 600px;
 }
 
 .spacing{
@@ -152,8 +151,28 @@ h1{
     height: 50vh;
 }
 
-@media only screen and (max-width: 992px) {
+@media screen and (max-width: 992px) {
     .champText{
-        font-size: 20px;
+        font-size: 24px;
+    }
+    
+}
+
+@media screen and (max-width: 576px) {
+    .col-12{
+        min-height: 400px;
+    }
+    
+    .cardChamp{
+        width: 240px;
+        padding-bottom: 5px;
+    }
+
+    .champName{
+        font-size: 30px;
+    }
+
+    .champType{
+        font-size: 25px;
     }
 }
