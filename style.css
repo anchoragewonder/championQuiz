@@ -10,9 +10,10 @@ html{
 h1{
     text-align: center;
     min-height: 20vh;
+    margin-top: 50px;
 }
 
-.container{
+.quizContainer{
     width: 800px;
     max-width: 80%;
     background-color: white;
@@ -20,11 +21,13 @@ h1{
     padding: 10px;
     box-shadow: 0 0 10px 2px;
     text-align: center;
+    margin-bottom: 150px;
+    justify-content: center;
 }
 
 .btn{
     border-radius: 5px;
-    background-color: #F1C320;
+    background-color: #000157;
     color: white;
     margin: auto;
     min-height: 200px;
@@ -32,9 +35,20 @@ h1{
     font-size: 40px;
 }
 
-.quizQuestion{
-    text-align: center;
-    font-size: 25px;
+.champText{ 
+    font-size: 32px;
+    margin-top: 20px;
+}
+
+.submit{
+    border-radius: 5px;
+    background-color: #000157;
+    color: white;
+    margin: auto;
+    min-height: 200px;
+    min-width: 200px;
+    font-size: 40px;
+
 }
 
 .response{
@@ -46,4 +60,119 @@ h1{
     min-width: 250px;
     max-width: 250px;
     font-size: 20px;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 2px;
+}
+
+.cardBg{
+    background-image: url(assets/Group\ 1.png);
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+    min-width: 200px;
+}
+
+.cardChamp{
+    width: 390px;
+    height: auto;
+    justify-self: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.cardContainer{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;    
+}
+
+.champName{
+    padding-top: 20px;
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+
+.champType{
+    font-size: 30px;
+    font-style: italic;
+}
+
+.valueLeft{
+    justify-content: center;
+    padding-right: 5px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.valueRight{
+    justify-content: center;
+    padding-left: 5px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.quizQuestion{
+    text-align: center;
+    font-size: 25px;
+}
+
+.stats{
+    max-width: 400px;
+    justify-content: center;
+    text-align: start;
+}
+
+.col-12{
+    min-height: 600px;
+}
+
+.spacing{
+    padding: 10px;
+}
+
+.hidden{
+    display: none;
+}
+
+.rowLeft{
+    padding-right: 10px;
+}
+
+.rowRight{
+    padding-left: 10px;
+}
+
+.rowHeight{
+    height: 50vh;
+}
+
+@media screen and (max-width: 992px) {
+    .champText{
+        font-size: 24px;
+    }
+    
+}
+
+@media screen and (max-width: 576px) {
+    .col-12{
+        min-height: 400px;
+    }
+    
+    .cardChamp{
+        width: 240px;
+        padding-bottom: 5px;
+    }
+
+    .champName{
+        font-size: 30px;
+    }
+
+    .champType{
+        font-size: 25px;
+    }
 }
