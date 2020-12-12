@@ -54,6 +54,7 @@ $(document).ready(function () {
             // at the end of each for loop create new cloned element with varibles from dictionary
             document.body.appendChild(quiz_card);
         }
+        $(".submitBtn").removeClass("hidden");
     })
 })
 
@@ -84,5 +85,13 @@ function buttonClick(obj) {
 
     console.log(attributeName);
     console.log(answers);
+
 }
 
+//smooth scrolling need to fix or implement new method
+$("response").click(function () {
+    $('html,body').animate({
+        scrollTop: $(".question1").offset().top
+    },
+        'slow');
+})
