@@ -88,10 +88,3 @@ function buttonClick(obj) {
 
 }
 
-//smooth scrolling need to fix or implement new method
-$("response").click(function () {
-    $('html,body').animate({
-        scrollTop: $(".question1").offset().top
-    },
-        'slow');
-})
