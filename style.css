@@ -186,13 +186,14 @@ div#quizCard{
     .cardChamp{
         width: 240px;
         padding-bottom: 5px;
+        padding-top: 5px;
     }
 
     .champName{
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .champType{
-        font-size: 25px;
+        font-size: 22px;
     }
 }
