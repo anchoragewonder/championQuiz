@@ -91,15 +91,21 @@ h1{
 }
 
 .champName{
-    padding-top: 20px;
+    padding-top: 25px;
     font-size: 35px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 700;
+    color: aliceblue;
 }
 
 .champType{
     font-size: 30px;
     font-style: italic;
+    color: aliceblue;
+}
+
+.attributeLeft{
+    color: aliceblue;
 }
 
 .valueLeft{
@@ -107,6 +113,11 @@ h1{
     padding-right: 5px;
     font-size: 20px;
     font-weight: 700;
+    color: aliceblue;
+}
+
+.attributeRight{
+    color: aliceblue;
 }
 
 .valueRight{
@@ -114,6 +125,7 @@ h1{
     padding-left: 5px;
     font-size: 20px;
     font-weight: 700;
+    color: aliceblue;
 }
 
 .quizQuestion{
@@ -149,6 +161,14 @@ h1{
 
 .rowHeight{
     height: 50vh;
+}
+
+div.submitBtn{
+    order: 1;
+}
+
+div#quizCard{
+    order: 0;
 }
 
 @media screen and (max-width: 992px) {

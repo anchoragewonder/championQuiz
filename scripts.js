@@ -52,7 +52,7 @@ $(document).ready(function () {
             $(quiz_card).find("#cardAttr").text(questionAttr);
 
             // at the end of each for loop create new cloned element with varibles from dictionary
-            document.body.appendChild(quiz_card);
+            $(quiz_card).insertBefore("div.submitBtn");
         }
         $(".submitBtn").removeClass("hidden");
     })
