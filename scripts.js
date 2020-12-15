@@ -68,9 +68,22 @@ $(".submit").click(function () {
             var data = JSON.parse(this.responseText);
             console.log(data);
 
+            $("div.quizContainer").remove();
+
+            let champCard = document.getElementById("championCard");
+            $(champCard).removeClass("hidden");
+            $(champCard).find(".champName").text(data.name);
+            $(champCard).find(".champType").text(data.class);
+            $(champCard).find("#damage").text(data.damage);
+            $(champCard).find("#difficulty").text(data.difficulty);
+            $(champCard).find("#crowdControl").text(data.crowdControl);
+            $(champCard).find("#mobility").text(data.mobility);
+            $(champCard).find("#defense").text(data.defense);
+
+            $(".submitBtn").addClass("hidden");
+
             // we get the returned data
         }
-
         // end of state change: it can be after some time (async)
     };
 
