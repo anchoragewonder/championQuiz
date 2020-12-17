@@ -81,6 +81,7 @@ $(".submit").click(function () {
             $(champCard).find("#defense").text(data.defense);
 
             $(".submitBtn").addClass("hidden");
+            document.documentElement.scrollTop = 0;
             // we get the returned data
         }
         // end of state change: it can be after some time (async)
@@ -94,6 +95,8 @@ function buttonClick(obj) {
     let btnVal = obj.value;
     let attributeName = $(obj).closest(".quizContainer").find("#cardAttr").text();
     answers[attributeName] = btnVal;
+
+    $(obj).closest(".quizContainer").css("opacity", ".6");
 
     console.log(attributeName);
     console.log(answers);

@@ -4,7 +4,7 @@ html{
 }
 
 .bg{
-    background-color: #4056A1;
+    background-color: #88bdbc;
 }
 
 h1{
@@ -44,7 +44,7 @@ h1{
 
 .buttonStyle{
     border-radius: 5px;
-    background-color: #000157;
+    background-color: #112d32;
     color: white;
     margin: auto;
     min-height: 200px;
@@ -59,13 +59,17 @@ h1{
 
 .response{
     border-radius: 5px;
-    background-color: #f16220;
+    background-color: #29648a;
     color: white;
     margin: auto;
     min-height: 100px;
     min-width: 250px;
     max-width: 250px;
     font-size: 20px;
+}
+
+.response:hover{
+    background-color: #25247d;
 }
 
 .break {
