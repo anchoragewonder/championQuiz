@@ -81,7 +81,6 @@ $(".submit").click(function () {
             $(champCard).find("#defense").text(data.defense);
 
             $(".submitBtn").addClass("hidden");
-
             // we get the returned data
         }
         // end of state change: it can be after some time (async)

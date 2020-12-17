@@ -25,7 +25,7 @@
 
   <div id="start_btn">
     <div class="container quizContainer">
-      <button class="btn">START</button>
+      <button class="btn buttonStyle">START</button>
     </div>
   </div>
 
@@ -46,7 +46,7 @@
     </div>
   </div>
   <div class="container quizContainer hidden submitBtn" data-aos="fade-up">
-    <button class="submit">Submit</button>
+    <button class="submit buttonStyle">Submit</button>
   </div>
 
   <div id="championCard" class="container hidden">
@@ -60,43 +60,57 @@
           <div class="break"></div>
           <img class="cardChamp" src="assets/champions/Aatrox_splash..jpg">
           <div class="break"></div>
-          <div class="stats">
-            <span class="rowLeft">
-              <span id="defense" class="valueLeft"> 1</span>
-              <span class="attributeLeft">DEF</span>
-            </span>
-            <span class="rowRight">
-              <span id="damage" class="valueRight">1</span>
-              <span class="attributeRight">DMG</span>
-            </span>
-            <div class="break"></div>
-            <span class="rowLeft">
-              <span id="crowdControl" class="valueLeft"> 1</span>
-              <span class="attributeLeft">CCC</span>
-            </span>
-            <span class="rowRight">
-              <span id="mobility" class="valueRight">1</span>
-              <span class="attributeRight">MOB</span>
+          <div class="stats container">
+            <span class="row justify-content-center">
+              <span class="col d-flex justify-content-center">
+                <span id="defense" class="cardValue">1</span>
+                <span class="cardText">DEF</span>
+              </span>
+              <span class="col d-flex justify-content-center">
+                <span id="damage" class="cardValue">1</span>
+                <span class="cardText">DMG</span>
+              </span>
             </span>
             <div class="break"></div>
-            <span class="rowLeft">
-              <span id="difficulty" class="valueLeft">1</span>
-              <span class="attributeLeft">DIF</span>
+            <span class="row justify-content-center">
+              <span class="col d-flex justify-content-center">
+                <span id="crowdControl" class="cardValue">1</span>
+                <span class="cardText">CCC</span>
+              </span>
+              <span class="col d-flex justify-content-center">
+                <span id="mobility" class="cardValue">1</span>
+                <span class="cardText">MOB</span>
+              </span>
             </span>
-            <span class="rowRight">
-              <span id="functionality" class="valueRight">1</span>
-              <span class="attributeRight">FUN</span>
+            <div class="break"></div>
+            <span class="row justify-content-center">
+              <span class="col d-flex justify-content-center">
+                <span id="difficulty" class="cardValue">1</span>
+                <span class="cardText">DIF</span>
+              </span>
+              <span class="col d-flex justify-content-center">
+                <span id="functionality" class="cardValue">1</span>
+                <span class="cardText">FUN</span>
+              </span>
             </span>
           </div>
         </div>
       </div>
-      <div class="col-12 align-self-center">
+    </div>
+    <div class="row justify-content-center textRow">
+      <div class="col align-self-center">
         <p class="champText"> this is sample text about a random champion because hey why not. I need to practice my
           typing anyway so why not try to do this more often so I can attempt to make a wage
         </p>
       </div>
     </div>
+    <div class="row justify-content-center textRow">
+      <div class="col btnContainer redoBtn" data-aos="fade-up">
+        <button class="buttonStyle">Take Again</button>
+      </div>
+    </div>
   </div>
+
 
   <!--jQuery and Bootstrap Bundle (includes Popper) also AOS library-->
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
