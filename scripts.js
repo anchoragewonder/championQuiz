@@ -67,18 +67,19 @@ $(".submit").click(function () {
         if (this.status == 200) {
             var data = JSON.parse(this.responseText);
             console.log(data);
+            let firstChamp = data.Champions[0];
 
             $("div.quizContainer").remove();
 
             let champCard = document.getElementById("championCard");
             $(champCard).removeClass("hidden");
-            $(champCard).find(".champName").text(data.name);
-            $(champCard).find(".champType").text(data.class);
-            $(champCard).find("#damage").text(data.damage);
-            $(champCard).find("#difficulty").text(data.difficulty);
-            $(champCard).find("#crowdControl").text(data.crowdControl);
-            $(champCard).find("#mobility").text(data.mobility);
-            $(champCard).find("#defense").text(data.defense);
+            $(champCard).find(".champName").text(firstChamp.name);
+            $(champCard).find(".champType").text(firstChamp.class);
+            $(champCard).find("#damage").text(firstChamp.damage);
+            $(champCard).find("#difficulty").text(firstChamp.difficulty);
+            $(champCard).find("#crowdControl").text(firstChamp.crowdControl);
+            $(champCard).find("#mobility").text(firstChamp.mobility);
+            $(champCard).find("#defense").text(firstChamp.defense);
 
             $(".submitBtn").addClass("hidden");
             document.documentElement.scrollTop = 0;
