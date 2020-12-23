@@ -55,13 +55,16 @@
   <div id="championCard" class="container hidden">
     <!-- structure for trading card of returned quiz champ value-->
     <div class="row justify-content-center rowHeight">
+
       <div class="col-12 cardBg">
         <div class="cardContainer">
           <span class="champName">name</span>
           <div class="break"></div>
           <span class="champType"> champ type</span>
           <div class="break"></div>
-          <img class="cardChamp" src="assets/champions/Aatrox_splash..jpg">
+          <a title="heloo" id="firstChampUrl" href="">
+            <img class="cardChamp" src="">
+          </a>
           <div class="break"></div>
           <div class="stats container">
             <span class="row justify-content-center">
@@ -100,18 +103,28 @@
         </div>
       </div>
     </div>
-    <div> Other champions you might like</div>
+
+    <div class="center otherChamps"> Other champions you might like</div>
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <div id="champ1Text"></div>
-          <a id="champ1Url" href="">
-            <img id="champ1Img" src="">
+          <div class="center otherChamps" id="champ1Text"></div>
+          <a class="champLink" id="champ1Url" href="">
+            <img class="resize" id="champ1Img" src="">
           </a>
         </div>
-
-        <a class="col-md-4"><img id="similarChamp2" src=""></a>
-        <a class="col-md-4"><img id="similarChamp3" src=""></a>
+        <div class="col-md-4">
+          <div class="center otherChamps" id="champ2Text"></div>
+          <a class="champLink" id="champ2Url" href="">
+            <img class="resize" id="champ2Img" src="">
+          </a>
+        </div>
+        <div class="col-md-4">
+          <div class="center otherChamps" id="champ3Text"></div>
+          <a class="champLink" id="champ3Url" href="">
+            <img class="resize" id="champ3Img" src="">
+          </a>
+        </div>
       </div>
     </div>
     <div class="row justify-content-center textRow">
@@ -120,7 +133,6 @@
       </div>
     </div>
   </div>
-
 
   <!--jQuery and Bootstrap Bundle (includes Popper) also AOS library-->
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
