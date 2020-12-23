@@ -16,7 +16,7 @@ function createJSObject(json) {
     quizLength = json.quiz.length;
 }
 
-getJSON("https://raw.githubusercontent.com/anchoragewonder/championQuiz/cloning_quiz/quiz.json").then(data => {
+getJSON("https://raw.githubusercontent.com/anchoragewonder/championQuiz/design_deepdive/quiz.json").then(data => {
     console.log("Success");
 })
 
@@ -100,12 +100,20 @@ function similarChampImgs() {
     const firstChamp = data.Champions[0];
     let skinNum = Math.floor(Math.random() * 3);
     let displayNum = 4; // index of other champs to  stop at  display 4 =  index 1-3
-
     let champCard = document.getElementById("championCard");
+
+    if (firstChamp.name == "Cho Gath") {
+        let chogathName = "Cho-gath";
+        $(champCard).find("#firstChampUrl").prop('href', champUrl + chogathName.toLocaleLowerCase());
+        capitalizeFirstLetter(firstChamp.name); // necesarry to get img 
+    }
+    else {
+        $(champCard).find("#firstChampUrl").prop('href', champUrl + firstChamp.name.toLowerCase());
+    }
+
     $(champCard).removeClass("hidden");
-    $(champCard).find("#firstChampUrl").prop('href', champUrl + firstChamp.name.toLowerCase());
     $(champCard).find("#firstChampUrl").prop('title', firstChamp.name);
-    $(champCard).find(".cardChamp").prop('src', imgURL + firstChamp.name + '_' + skinNum + '.jpg');
+    $(champCard).find(".cardChamp").prop('src', imgURL + firstChamp.name.replace(/\s/g, '') + '_' + skinNum + '.jpg');
     $(champCard).find(".champName").text(firstChamp.name);
     $(champCard).find(".champType").text(firstChamp.class);
     $(champCard).find("#damage").text(firstChamp.damage);
@@ -122,4 +130,10 @@ function similarChampImgs() {
         $("#champ" + i + "Img").prop('src', imgURL + champName.replace(/\s/g, '') + '_' + skinNum + '.jpg');
         $("#champ" + i + "Text").text(champName);
     }
-}   
+}
+
+function capitalizeFirstLetter(string) {
+    let lower = string.charAt(0).toUpperCase() + string.slice(1);
+    console.log(lower);
+    return lower
+}
