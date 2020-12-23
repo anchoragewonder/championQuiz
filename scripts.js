@@ -66,7 +66,6 @@ $(".submit").click(function () {
 
         if (this.status == 200) {
             var data = JSON.parse(this.responseText);
-            console.log(data);
             let firstChamp = data.Champions[0];
 
             $("div.quizContainer").remove();
@@ -80,6 +79,7 @@ $(".submit").click(function () {
             $(champCard).find("#crowdControl").text(firstChamp.crowdControl);
             $(champCard).find("#mobility").text(firstChamp.mobility);
             $(champCard).find("#defense").text(firstChamp.defense);
+
 
             $(".submitBtn").addClass("hidden");
             document.documentElement.scrollTop = 0;
@@ -104,3 +104,6 @@ function buttonClick(obj) {
 
 }
 
+function similarChampImgs() {
+
+}
