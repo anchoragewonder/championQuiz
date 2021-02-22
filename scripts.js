@@ -16,7 +16,7 @@ function createJSObject(json) {
     quizLength = json.quiz.length;
 }
 
-getJSON("https://raw.githubusercontent.com/anchoragewonder/championQuiz/design_deepdive/quiz.json").then(data => {
+getJSON("https://raw.githubusercontent.com/anchoragewonder/championQuiz/main/quiz.json").then(data => {
     console.log("Success");
 })
 
@@ -81,6 +81,10 @@ $(".submit").click(function () {
     xhr.open('POST', 'https://kauhny1enj.execute-api.us-east-1.amazonaws.com/Prod/quizpost', true);
     xhr.send(JSON.stringify(answers));
 });
+
+$(".reload").click(function () {
+    location.reload();
+})
 
 function buttonClick(obj) {
     let btnVal = obj.value;
