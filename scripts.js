@@ -2,6 +2,7 @@ var quiz_card_prefab;
 var quizData;
 var quizLength;
 var answers = {};
+var data;
 var url = "https://kauhny1enj.execute-api.us-east-1.amazonaws.com/Prod/quizpost"
 
 // return JSON data from any file path (asynchronous)
@@ -15,7 +16,7 @@ function createJSObject(json) {
     quizLength = json.quiz.length;
 }
 
-getJSON("https://raw.githubusercontent.com/anchoragewonder/championQuiz/cloning_quiz/quiz.json").then(data => {
+getJSON("https://raw.githubusercontent.com/anchoragewonder/championQuiz/design_deepdive/quiz.json").then(data => {
     console.log("Success");
 })
 
@@ -52,8 +53,9 @@ $(document).ready(function () {
             $(quiz_card).find("#cardAttr").text(questionAttr);
 
             // at the end of each for loop create new cloned element with varibles from dictionary
-            document.body.appendChild(quiz_card);
+            $(quiz_card).insertBefore("div.submitBtn");
         }
+        $(".submitBtn").removeClass("hidden");
     })
 })
 
@@ -64,13 +66,16 @@ $(".submit").click(function () {
         if (this.readyState != 4) return;
 
         if (this.status == 200) {
-            var data = JSON.parse(this.responseText);
-            console.log(data);
+            data = JSON.parse(this.responseText);
+            console.log(data)
 
-            // we get the returned data
+            $("div.quizContainer").remove();
+
+            similarChampImgs();
+
+            $(".submitBtn").addClass("hidden");
+            document.documentElement.scrollTop = 0;
         }
-
-        // end of state change: it can be after some time (async)
     };
 
     xhr.open('POST', 'https://kauhny1enj.execute-api.us-east-1.amazonaws.com/Prod/quizpost', true);
@@ -82,7 +87,53 @@ function buttonClick(obj) {
     let attributeName = $(obj).closest(".quizContainer").find("#cardAttr").text();
     answers[attributeName] = btnVal;
 
+    $(obj).closest(".quizContainer").css("opacity", ".6");
+
     console.log(attributeName);
     console.log(answers);
+
 }
 
+function similarChampImgs() {
+    const champUrl = "https://na.leagueoflegends.com/en-us/champions/";
+    const imgURL = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/";
+    const firstChamp = data.Champions[0];
+    let skinNum = Math.floor(Math.random() * 3);
+    let displayNum = 4; // index of other champs to  stop at  display 4 =  index 1-3
+    let champCard = document.getElementById("championCard");
+
+    if (firstChamp.name == "Cho Gath") {
+        let chogathName = "Cho-gath";
+        $(champCard).find("#firstChampUrl").prop('href', champUrl + chogathName.toLocaleLowerCase());
+        capitalizeFirstLetter(firstChamp.name); // necesarry to get img 
+    }
+    else {
+        $(champCard).find("#firstChampUrl").prop('href', champUrl + firstChamp.name.toLowerCase());
+    }
+
+    $(champCard).removeClass("hidden");
+    $(champCard).find("#firstChampUrl").prop('title', firstChamp.name);
+    $(champCard).find(".cardChamp").prop('src', imgURL + firstChamp.name.replace(/\s/g, '') + '_' + skinNum + '.jpg');
+    $(champCard).find(".champName").text(firstChamp.name);
+    $(champCard).find(".champType").text(firstChamp.class);
+    $(champCard).find("#damage").text(firstChamp.damage);
+    $(champCard).find("#difficulty").text(firstChamp.difficulty);
+    $(champCard).find("#crowdControl").text(firstChamp.crowdControl);
+    $(champCard).find("#mobility").text(firstChamp.mobility);
+    $(champCard).find("#defense").text(firstChamp.defense);
+
+    for (i = 1; i < displayNum; i++) {
+        let champName = data.Champions[i].name
+
+        $("#champ" + i + "Url").prop('href', champUrl + champName.toLowerCase());
+        $("#champ" + i + "Url").prop('title', champName);
+        $("#champ" + i + "Img").prop('src', imgURL + champName.replace(/\s/g, '') + '_' + skinNum + '.jpg');
+        $("#champ" + i + "Text").text(champName);
+    }
+}
+
+function capitalizeFirstLetter(string) {
+    let lower = string.charAt(0).toUpperCase() + string.slice(1);
+    console.log(lower);
+    return lower
+}

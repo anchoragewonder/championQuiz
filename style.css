@@ -4,13 +4,19 @@ html{
 }
 
 .bg{
-    background-color: #4056A1;
+    background-color: #88bdbc;
 }
 
 h1{
     text-align: center;
     min-height: 20vh;
     margin-top: 50px;
+    font-family: 'Russo One', sans-serif;
+}
+
+.textRow{
+    max-height: 300px;
+    margin-top: 200px;
 }
 
 .quizContainer{
@@ -25,9 +31,21 @@ h1{
     justify-content: center;
 }
 
-.btn{
+.btnContainer{
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
     border-radius: 5px;
-    background-color: #000157;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+    text-align: center;
+    margin-bottom: 150px;
+    justify-content: center;
+}
+
+.buttonStyle{
+    border-radius: 5px;
+    background-color: #112d32;
     color: white;
     margin: auto;
     min-height: 200px;
@@ -40,26 +58,19 @@ h1{
     margin-top: 20px;
 }
 
-.submit{
-    border-radius: 5px;
-    background-color: #000157;
-    color: white;
-    margin: auto;
-    min-height: 200px;
-    min-width: 200px;
-    font-size: 40px;
-
-}
-
 .response{
     border-radius: 5px;
-    background-color: #f16220;
+    background-color: #29648a;
     color: white;
     margin: auto;
     min-height: 100px;
     min-width: 250px;
     max-width: 250px;
     font-size: 20px;
+}
+
+.response:hover{
+    background-color: #25247d;
 }
 
 .break {
@@ -91,29 +102,62 @@ h1{
 }
 
 .champName{
-    padding-top: 20px;
+    padding-top: 25px;
     font-size: 35px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 700;
+    color: aliceblue;
 }
 
 .champType{
     font-size: 30px;
     font-style: italic;
+    color: aliceblue;
+}
+
+.attributeLeft{
+   /* color: aliceblue;
+    font-size: 30px; */
 }
 
 .valueLeft{
     justify-content: center;
     padding-right: 5px;
-    font-size: 20px;
+    /* font-size: 30px;
+    color: aliceblue; */
     font-weight: 700;
+    
+}
+
+.attributeRight{
+    /* color: aliceblue;
+     font-size: 30px; */
 }
 
 .valueRight{
     justify-content: center;
     padding-left: 5px;
-    font-size: 20px;
+    /* font-size: 30px; color: aliceblue;*/
     font-weight: 700;
+    
+}
+
+.cardText{
+    color: aliceblue;
+    font-size: 30px;
+    display: inline-block;
+    width: 65px;
+}
+
+.cardValue{
+    display: inline-block;
+    color: aliceblue;
+    font-size: 30px;
+    font-weight: 800;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 40px;
+    text-align: center;
 }
 
 .quizQuestion{
@@ -124,7 +168,6 @@ h1{
 .stats{
     max-width: 400px;
     justify-content: center;
-    text-align: start;
 }
 
 .col-12{
@@ -148,8 +191,32 @@ h1{
 }
 
 .rowHeight{
-    height: 50vh;
+    height: 70vh;
 }
+
+.center{
+    text-align: center; 
+}
+
+.otherChamps{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Russo One', sans-serif;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.resize{
+    width: 300px;
+    height: auto;
+}
+
+.champLink{
+    text-align: center;
+    display: block;
+}
+
 
 @media screen and (max-width: 992px) {
     .champText{
@@ -166,13 +233,23 @@ h1{
     .cardChamp{
         width: 240px;
         padding-bottom: 5px;
+        padding-top: 5px;
     }
 
     .champName{
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .champType{
+        font-size: 22px;
+    }
+
+    /*.cardText{
         font-size: 25px;
     }
+
+    .cardValue{
+        font-size: 25px;
+    }
+    */
 }

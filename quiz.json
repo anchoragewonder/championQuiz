@@ -10,7 +10,7 @@
                 },
                 {
                     "text": "CHARRRRRRRRRRGE",
-                    "value": 8
+                    "value": 3
                 },
                 {
                     "text": "Sneak in behind enemy lines",
@@ -18,7 +18,7 @@
                 },
                 {
                     "text": "Set up for an ambush",
-                    "value": 6
+                    "value": 2
                 }
             ]
         },
@@ -32,7 +32,7 @@
                 },
                 {
                     "text": "Pistols",
-                    "value": 5
+                    "value": 3
                 },
                 {
                     "text": "Fist",
@@ -40,7 +40,7 @@
                 },
                 {
                     "text": "Staff",
-                    "value": 7
+                    "value": 2
                 }
             ]
         },
@@ -50,11 +50,11 @@
             "responses": [
                 {
                     "text": "Study tatics",
-                    "value": 2
+                    "value": 1
                 },
                 {
                     "text": "Train in combat",
-                    "value": 7
+                    "value": 1
                 },
                 {
                     "text": "Dash in and face the enemy",
@@ -62,7 +62,7 @@
                 },
                 {
                     "text": "Charge ahead no need to prepare",
-                    "value": 9
+                    "value": 3
                 }
             ]
         },
@@ -72,19 +72,19 @@
             "responses": [
                 {
                     "text": "Pull out your sheild and block for them",
-                    "value": 5
-                },
-                {
-                    "text": "Taunt the enemy",
-                    "value": 7
+                    "value": 3
                 },
                 {
                     "text": "Walk away and pretend you saw nothing",
+                    "value": 1
+                },
+                {
+                    "text": "Fight with everything you got",
                     "value": 2
                 },
                 {
                     "text": "Snare the enemy and stop thier movement",
-                    "value": 9
+                    "value": 3
                 }
             ]
         }
