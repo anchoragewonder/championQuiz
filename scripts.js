@@ -102,10 +102,13 @@ function similarChampImgs() {
     const champUrl = "https://na.leagueoflegends.com/en-us/champions/";
     const imgURL = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/";
     const firstChamp = data.Champions[0];
+    // skin randomizes everytime you pick champions 
     let skinNum = Math.floor(Math.random() * 3);
-    let displayNum = 4; // index of other champs to  stop at  display 4 =  index 1-3
+    // index of other champs to  stop at  display 4 =  index 1-3
+    let displayNum = 4;
     let champCard = document.getElementById("championCard");
 
+    //conditional statement for odd champion names - (other names) - Aurelion sol, Nunu & Willump, ect - probably do a case switch
     if (firstChamp.name == "Cho Gath") {
         let chogathName = "Cho-gath";
         $(champCard).find("#firstChampUrl").prop('href', champUrl + chogathName.toLocaleLowerCase());
