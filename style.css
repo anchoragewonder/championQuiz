@@ -1,6 +1,5 @@
 html{
     font-size: 12px;
-    
 }
 
 .bg{
@@ -12,23 +11,6 @@ h1{
     min-height: 20vh;
     margin-top: 50px;
     font-family: 'Russo One', sans-serif;
-}
-
-.textRow{
-    max-height: 300px;
-    margin-top: 200px;
-}
-
-.quizContainer{
-    width: 800px;
-    max-width: 80%;
-    background-color: white;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 0 10px 2px;
-    text-align: center;
-    margin-bottom: 150px;
-    justify-content: center;
 }
 
 .btnContainer{
@@ -53,9 +35,34 @@ h1{
     font-size: 40px;
 }
 
+.break {
+    flex-basis: 100%;
+    height: 2px;
+}
 .champText{ 
     font-size: 32px;
     margin-top: 20px;
+}
+
+.hidden{
+    display: none;
+}
+
+.quizContainer{
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+    text-align: center;
+    margin-bottom: 150px;
+    justify-content: center;
+}
+
+.quizQuestion{
+    text-align: center;
+    font-size: 25px;
 }
 
 .response{
@@ -73,11 +80,15 @@ h1{
     background-color: #25247d;
 }
 
-.break {
-    flex-basis: 100%;
-    height: 2px;
+.textRow{
+    max-height: 300px;
+    margin-top: 200px;
 }
 
+
+/*-----------------------------------------------------------------------------------
+    CARD STYLES
+-----------------------------------------------------------------------------------*/
 .cardBg{
     background-image: url(assets/Group\ 1.png);
     background-repeat:no-repeat;
@@ -115,31 +126,16 @@ h1{
     color: aliceblue;
 }
 
-.attributeLeft{
-   /* color: aliceblue;
-    font-size: 30px; */
-}
-
 .valueLeft{
     justify-content: center;
     padding-right: 5px;
-    /* font-size: 30px;
-    color: aliceblue; */
     font-weight: 700;
-    
-}
-
-.attributeRight{
-    /* color: aliceblue;
-     font-size: 30px; */
 }
 
 .valueRight{
     justify-content: center;
     padding-left: 5px;
-    /* font-size: 30px; color: aliceblue;*/
     font-weight: 700;
-    
 }
 
 .cardText{
@@ -160,9 +156,12 @@ h1{
     text-align: center;
 }
 
-.quizQuestion{
-    text-align: center;
-    font-size: 25px;
+.col-12{
+    min-height: 600px;
+}
+
+.center{
+    text-align: center; 
 }
 
 .stats{
@@ -170,16 +169,8 @@ h1{
     justify-content: center;
 }
 
-.col-12{
-    min-height: 600px;
-}
-
 .spacing{
     padding: 10px;
-}
-
-.hidden{
-    display: none;
 }
 
 .rowLeft{
@@ -192,10 +183,6 @@ h1{
 
 .rowHeight{
     height: 70vh;
-}
-
-.center{
-    text-align: center; 
 }
 
 .otherChamps{
@@ -217,12 +204,10 @@ h1{
     display: block;
 }
 
-
 @media screen and (max-width: 992px) {
     .champText{
         font-size: 24px;
     }
-    
 }
 
 @media screen and (max-width: 576px) {
@@ -243,13 +228,4 @@ h1{
     .champType{
         font-size: 22px;
     }
-
-    /*.cardText{
-        font-size: 25px;
-    }
-
-    .cardValue{
-        font-size: 25px;
-    }
-    */
 }

@@ -3,7 +3,6 @@ var quizData;
 var quizLength;
 var answers = {};
 var data;
-var url = "https://kauhny1enj.execute-api.us-east-1.amazonaws.com/Prod/quizpost"
 
 // return JSON data from any file path (asynchronous)
 async function getJSON(path) {
@@ -31,16 +30,16 @@ $(document).ready(function () {
         startButton.innerHTML = '';
 
         for (let i = 0; i < quizLength; i++) {
-            let quiz_card = quiz_card_prefab.cloneNode(true);
+            const quiz_card = quiz_card_prefab.cloneNode(true);
 
             // defining varibles to easily acces ditionary and populate the clone card
-            let questionHeader = quizData[i].question;
-            let questionAttr = quizData[i].attribute;
-            let questionRes = quizData[i].responses;
-            let secretValA = questionRes[0].value;
-            let secretValB = questionRes[1].value;
-            let secretValC = questionRes[2].value;
-            let secretValD = questionRes[3].value;
+            const questionHeader = quizData[i].question;
+            const questionAttr = quizData[i].attribute;
+            const questionRes = quizData[i].responses;
+            const secretValA = questionRes[0].value;
+            const secretValB = questionRes[1].value;
+            const secretValC = questionRes[2].value;
+            const secretValD = questionRes[3].value;
 
             // need to optimize : inputs text from dictionary into button id in cloned element
             $(quiz_card).find("#button_1").text(questionRes[0].text).addClass(`question${i}`).attr('value', secretValA);
@@ -52,13 +51,14 @@ $(document).ready(function () {
             $(quiz_card).find("#cardQuestion").text(questionHeader);
             $(quiz_card).find("#cardAttr").text(questionAttr);
 
-            // at the end of each for loop create new cloned element with varibles from dictionary
+            // at the end of each for loop create new cloned element with varibles from dictionary --above the submit button
             $(quiz_card).insertBefore("div.submitBtn");
         }
         $(".submitBtn").removeClass("hidden");
     })
 })
 
+// on click function to send quiz answers as a post request to League API -- also Clear the DOM of quiz questions-- then run simchampimgs function
 $(".submit").click(function () {
     var xhr = new XMLHttpRequest();
 
@@ -77,11 +77,11 @@ $(".submit").click(function () {
             document.documentElement.scrollTop = 0;
         }
     };
-
     xhr.open('POST', 'https://kauhny1enj.execute-api.us-east-1.amazonaws.com/Prod/quizpost', true);
     xhr.send(JSON.stringify(answers));
 });
 
+// Refresh page to restart quiz
 $(".reload").click(function () {
     location.reload();
 })
@@ -95,29 +95,40 @@ function buttonClick(obj) {
 
     console.log(attributeName);
     console.log(answers);
-
 }
 
 function similarChampImgs() {
     const champUrl = "https://na.leagueoflegends.com/en-us/champions/";
     const imgURL = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/";
-    const firstChamp = data.Champions[0];
-    // skin randomizes everytime you pick champions 
-    let skinNum = Math.floor(Math.random() * 3);
-    // index of other champs to  stop at  display 4 =  index 1-3
-    let displayNum = 4;
-    let champCard = document.getElementById("championCard");
 
-    //conditional statement for odd champion names - (other names) - Aurelion sol, Nunu & Willump, ect - probably do a case switch
+    // first champ in the list with highest number of matching answers to quiz.  
+    const firstChamp = data.Champions[0];
+
+    // skin randomizes everytime you pick champions - max 3 skins so far because of variety in champ skin numers some have 3 other 10.
+    const skinNum = Math.floor(Math.random() * 3);
+
+    // index of other champs to  stop at  display 4 =  index 1-3
+    const displayNum = 4;
+    const champCard = document.getElementById("championCard");
+
+    //conditional statement for odd champion names - (other names) - Aurelion sol, Nunu & Willump, Dr.Mundo ect - 
+    switch (firstChamp.name) {
+        case "Dr. Mundo":
+
+    }
+
     if (firstChamp.name == "Cho Gath") {
-        let chogathName = "Cho-gath";
+        const chogathName = "Cho-gath";
         $(champCard).find("#firstChampUrl").prop('href', champUrl + chogathName.toLocaleLowerCase());
-        capitalizeFirstLetter(firstChamp.name); // necesarry to get img 
+
+        // necesarry to get img 
+        capitalizeFirstLetter(firstChamp.name);
     }
     else {
         $(champCard).find("#firstChampUrl").prop('href', champUrl + firstChamp.name.toLowerCase());
     }
 
+    // populating the data of the Card element
     $(champCard).removeClass("hidden");
     $(champCard).find("#firstChampUrl").prop('title', firstChamp.name);
     $(champCard).find(".cardChamp").prop('src', imgURL + firstChamp.name.replace(/\s/g, '') + '_' + skinNum + '.jpg');
@@ -130,7 +141,7 @@ function similarChampImgs() {
     $(champCard).find("#defense").text(firstChamp.defense);
 
     for (i = 1; i < displayNum; i++) {
-        let champName = data.Champions[i].name
+        const champName = data.Champions[i].name;
 
         $("#champ" + i + "Url").prop('href', champUrl + champName.toLowerCase());
         $("#champ" + i + "Url").prop('title', champName);
@@ -140,7 +151,7 @@ function similarChampImgs() {
 }
 
 function capitalizeFirstLetter(string) {
-    let lower = string.charAt(0).toUpperCase() + string.slice(1);
+    const lower = string.charAt(0).toUpperCase() + string.slice(1);
     console.log(lower);
-    return lower
+    return lower;
 }
