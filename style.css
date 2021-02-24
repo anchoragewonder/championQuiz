@@ -16,10 +16,8 @@ h1{
 .btnContainer{
     width: 800px;
     max-width: 80%;
-    background-color: white;
     border-radius: 5px;
     padding: 10px;
-    box-shadow: 0 0 10px 2px;
     text-align: center;
     margin-bottom: 150px;
     justify-content: center;
@@ -30,8 +28,8 @@ h1{
     background-color: #112d32;
     color: white;
     margin: auto;
-    min-height: 200px;
-    min-width: 200px;
+    height: 20vh;
+    width: 40vw;
     font-size: 40px;
 }
 
@@ -95,6 +93,7 @@ h1{
     background-size:contain;
     background-position:center;
     min-width: 200px;
+    min-height: 600px;
 }
 
 .cardChamp{
@@ -113,7 +112,7 @@ h1{
 }
 
 .champName{
-    padding-top: 25px;
+    padding-top: 65px;
     font-size: 35px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 700;
@@ -154,10 +153,6 @@ h1{
     padding-right: 5px;
     width: 40px;
     text-align: center;
-}
-
-.col-12{
-    min-height: 600px;
 }
 
 .center{
@@ -208,10 +203,11 @@ h1{
     .champText{
         font-size: 24px;
     }
+
 }
 
 @media screen and (max-width: 576px) {
-    .col-12{
+    .cardBg{
         min-height: 400px;
     }
     

@@ -104,29 +104,29 @@ function similarChampImgs() {
     // first champ in the list with highest number of matching answers to quiz.  
     const firstChamp = data.Champions[0];
 
-    // skin randomizes everytime you pick champions - max 3 skins so far because of variety in champ skin numers some have 3 other 10.
-    const skinNum = Math.floor(Math.random() * 3);
+    // skin randomizes everytime you pick champions - max 2 skins so far because of variety in champ skin numers some have 3 other 10 and some are non sequential ie pyke 0,1,8,16,25
+    const skinNum = Math.round(Math.random());
 
     // index of other champs to  stop at  display 4 =  index 1-3
     const displayNum = 4;
     const champCard = document.getElementById("championCard");
 
     //conditional statement for odd champion names - (other names) - Aurelion sol, Nunu & Willump, Dr.Mundo, Jarvan IV, Kai'sa, Kha'zix, Kog'maw, Rek'sai, Vel'Koz, Xin Zhao- 
-    if (firstChamp.name == "Cho Gath") {
-        const chogathName = "Cho-gath";
-        $(champCard).find("#firstChampUrl").prop('href', champUrl + chogathName.toLocaleLowerCase());
-
-        // necesarry to get img 
-        capitalizeFirstLetter(firstChamp.name);
+    if (firstChamp.altName) {
+        const imgName = capitalizeFirstLetter(firstChamp.name);
+        console.log(firstChamp.altName)
+        $(champCard).find("#firstChampUrl").prop('href', champUrl + firstChamp.altName);
+        $(champCard).find(".cardChamp").prop('src', imgURL + imgName.replace(/\s/g, '') + '_' + skinNum + '.jpg');
     }
     else {
-        $(champCard).find("#firstChampUrl").prop('href', champUrl + firstChamp.name.toLowerCase());
+        const hrefName = firstChamp.name.replace(/\s/g, '-');
+        $(champCard).find("#firstChampUrl").prop('href', champUrl + hrefName.toLowerCase());
+        $(champCard).find(".cardChamp").prop('src', imgURL + firstChamp.name.replace(/\s/g, '') + '_' + skinNum + '.jpg');
     }
 
     // populating the data of the Card element
     $(champCard).removeClass("hidden");
     $(champCard).find("#firstChampUrl").prop('title', firstChamp.name);
-    $(champCard).find(".cardChamp").prop('src', imgURL + firstChamp.name.replace(/\s/g, '') + '_' + skinNum + '.jpg');
     $(champCard).find(".champName").text(firstChamp.name);
     $(champCard).find(".champType").text(firstChamp.class);
     $(champCard).find("#damage").text(firstChamp.damage);
@@ -136,12 +136,21 @@ function similarChampImgs() {
     $(champCard).find("#defense").text(firstChamp.defense);
 
     for (i = 1; i < displayNum; i++) {
-        const champName = data.Champions[i].name;
+        const otherChamps = data.Champions[i]
+        const champName = otherChamps.name;
 
-        $("#champ" + i + "Url").prop('href', champUrl + champName.toLowerCase());
-        $("#champ" + i + "Url").prop('title', champName);
-        $("#champ" + i + "Img").prop('src', imgURL + champName.replace(/\s/g, '') + '_' + skinNum + '.jpg');
-        $("#champ" + i + "Text").text(champName);
+        if (otherChamps.altName) {
+            const imgAltName = capitalizeFirstLetter(champName);
+            $("#champ" + i + "Url").prop('href', champUrl + otherChamps.altName);
+            $("#champ" + i + "Img").prop('src', imgURL + imgAltName.replace(/\s/g, '') + '_' + skinNum + '.jpg');
+        }
+        else {
+            const hrefAltName = champName.replace(/\s/g, '-');
+            $("#champ" + i + "Url").prop('href', champUrl + hrefAltName.toLowerCase());
+            $("#champ" + i + "Url").prop('title', champName);
+            $("#champ" + i + "Img").prop('src', imgURL + champName.replace(/\s/g, '') + '_' + skinNum + '.jpg');
+            $("#champ" + i + "Text").text(champName);
+        }
     }
 }
 
