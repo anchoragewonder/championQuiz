@@ -111,12 +111,7 @@ function similarChampImgs() {
     const displayNum = 4;
     const champCard = document.getElementById("championCard");
 
-    //conditional statement for odd champion names - (other names) - Aurelion sol, Nunu & Willump, Dr.Mundo ect - 
-    switch (firstChamp.name) {
-        case "Dr. Mundo":
-
-    }
-
+    //conditional statement for odd champion names - (other names) - Aurelion sol, Nunu & Willump, Dr.Mundo, Jarvan IV, Kai'sa, Kha'zix, Kog'maw, Rek'sai, Vel'Koz, Xin Zhao- 
     if (firstChamp.name == "Cho Gath") {
         const chogathName = "Cho-gath";
         $(champCard).find("#firstChampUrl").prop('href', champUrl + chogathName.toLocaleLowerCase());
