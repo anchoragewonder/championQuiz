@@ -114,9 +114,10 @@ function similarChampImgs() {
     //conditional statement for odd champion names - (other names) - Aurelion sol, Nunu & Willump, Dr.Mundo, Jarvan IV, Kai'sa, Kha'zix, Kog'maw, Rek'sai, Vel'Koz, Xin Zhao- 
     if (firstChamp.altName) {
         const imgName = capitalizeFirstLetter(firstChamp.name);
-        console.log(firstChamp.altName)
+        console.log(firstChamp.altName);
+        console.log(imgName);
         $(champCard).find("#firstChampUrl").prop('href', champUrl + firstChamp.altName);
-        $(champCard).find(".cardChamp").prop('src', imgURL + imgName.replace(/\s/g, '') + '_' + skinNum + '.jpg');
+        $(champCard).find(".cardChamp").prop('src', imgURL + imgName + '_' + skinNum + '.jpg');
     }
     else {
         const hrefName = firstChamp.name.replace(/\s/g, '-');
@@ -142,20 +143,27 @@ function similarChampImgs() {
         if (otherChamps.altName) {
             const imgAltName = capitalizeFirstLetter(champName);
             $("#champ" + i + "Url").prop('href', champUrl + otherChamps.altName);
-            $("#champ" + i + "Img").prop('src', imgURL + imgAltName.replace(/\s/g, '') + '_' + skinNum + '.jpg');
+            $("#champ" + i + "Img").prop('src', imgURL + imgAltName + '_' + skinNum + '.jpg');
         }
         else {
             const hrefAltName = champName.replace(/\s/g, '-');
             $("#champ" + i + "Url").prop('href', champUrl + hrefAltName.toLowerCase());
-            $("#champ" + i + "Url").prop('title', champName);
             $("#champ" + i + "Img").prop('src', imgURL + champName.replace(/\s/g, '') + '_' + skinNum + '.jpg');
-            $("#champ" + i + "Text").text(champName);
         }
+        $("#champ" + i + "Url").prop('title', champName);
+        $("#champ" + i + "Text").text(champName);
     }
 }
 
 function capitalizeFirstLetter(string) {
-    const lower = string.charAt(0).toUpperCase() + string.slice(1);
-    console.log(lower);
-    return lower;
+    const concatenateString = string.replace(/\s/g, '');
+    console.log(concatenateString);
+
+    const lowerCase = concatenateString.toLowerCase();
+    console.log(lowerCase);
+
+    const firstLetterCapital = lowerCase.charAt(0).toUpperCase() + lowerCase.slice(1);
+    console.log(firstLetterCapital);
+
+    return firstLetterCapital;
 }
